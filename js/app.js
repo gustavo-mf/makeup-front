@@ -4,8 +4,8 @@ function productItem(product) {
   const dolarConversion = 5.50;
   const name = product.name;
   const imgUrl = product.api_featured_image;
-  const price = product.price;//String(value / 100).replace('.',',')
-  const priceFormated = price ? `R$ ${String(((price * dolarConversion) / 100).toFixed(2)).replace('.',',')}` : 'R$ 0,00';
+  const price = Number(product.price);
+  const priceFormated = price ? `R$ ${String((price * dolarConversion).toFixed(2)).replace('.',',')}` : 'R$ 0,00';
   const brand = product.brand;
   const category = product.category
   const producId = product.id;
